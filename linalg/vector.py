@@ -8,11 +8,26 @@ class Vector2:
         self.y = y
 
     def __add__(self, other):
-        return Vector2(self.x + other.x, self.y + other.y) # вызывается когда пишем v1 + v2
-    
-'''Тебе надо перегрузить разность, умножение на число (с двух сторон, то есть 4 * v и v * 4) , деление и написать 
-функцию normaize() - которая приводит вектор к единичной длине
-после этого можно запускать.
-Затем в файлике from_circle_to_center переписать, чтобы точки распрделялись не по эллипсу а по кругу
+        return Vector2(self.x + other.x, self.y + other.y)
+    def __sub__(self, other):
+        return Vector2(self.x - other.x, self.y - other.y)
+    def __mul__(self, other):
+        return Vector2(self.x * other, self.y * other)
+    def __rmul__(self, other):
+        return Vector2(self.x * other, self.y * other)
+    def __truediv__(self, other):
+        if other!=0:
+            return Vector2(self.x / other, self.y / other)
+        else:
+            print("Вы не знаете законов математики")
+    def normalize(self):
+        l=(self.x **2 + self.y**2)**0.5
+        return Vector2(self.x / l, self.y / l)
+
+    def __str__(self):
+        return f"[{self.x},{self.y}]"
+
+
+'''
 И добавить способ на экране менять скорость (как добавить поле для ввода на экран можно у нейронки спрашивать)'''
 

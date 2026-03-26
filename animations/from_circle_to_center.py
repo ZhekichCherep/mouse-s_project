@@ -10,8 +10,10 @@ class CircleAnimations:
         self.screen = screen
         self.center = Vector2(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
 
-        a = SCREEN_WIDTH / 2 - 10
-        b = SCREEN_HEIGHT / 2 - 10
+        # a = SCREEN_WIDTH / 2 - 10
+        # b = SCREEN_HEIGHT / 2 - 10
+        a = SCREEN_HEIGHT / 2 - 10
+        b = a
 
         self.vectors = []
         for i in range(n_points):
