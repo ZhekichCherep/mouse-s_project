@@ -24,8 +24,13 @@ class Vector2:
         l=(self.x **2 + self.y**2)**0.5
         return Vector2(self.x / l, self.y / l)
 
+    def get_coordinates(self):
+        return self.x, self.y
+
     def __str__(self):
         return f"[{self.x},{self.y}]"
+
+
 
 
 '''
